@@ -2,7 +2,6 @@ require './question.rb'
 require './player.rb'
 
 class Game
-
   def initialize
     puts "What's name of player 1?"
     player1 = gets.chomp
@@ -13,7 +12,6 @@ class Game
     @player2 = Player.new(player2)
 
     @current_player = @player1
-
   end
 
   def change_player
@@ -59,5 +57,4 @@ class Game
     end
     checkWinner
   end
-
 end
