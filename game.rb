@@ -26,12 +26,8 @@ class Game
 
   def printQuestion
     puts "----- NEW TURN -----"
-      @newQuestion = Question.new(@current_player.name)
-      if @current_player.name == @player1.name
-        puts "#{@player1.name}: #{@newQuestion.newQuestion}"
-      else
-        puts "#{@player2.name}: #{@newQuestion.newQuestion}"
-      end
+    @newQuestion = Question.new(@current_player.name)
+    puts "#{@current_player.name}: #{@newQuestion.newQuestion}"
   end
  
   def checkAnswer
@@ -45,7 +41,7 @@ class Game
       @current_player.life -= 1
       puts "#{@player1.name}: #{@player1.life}/3 vs #{@player2.name}: #{@player2.life}/3"
     end
-
+    
   end
 
   def checkWinner
@@ -54,9 +50,6 @@ class Game
     puts "#{@current_player.name} wins with a score of #{@diff_score}"
     puts "Good Bye!"
   end
-
-
-  
 
   def newTurn
     while @player1.life > 0 && @player2.life > 0
